@@ -7,6 +7,7 @@ document.getElementById('issueInputForm').addEventListener('submit', saveIssue)
 function fetchIssues () {
    let issues = JSON.parse(localStorage.getItem('issues'))
    let issuesList = document.getElementById('issuesList')
+   console.log(issues)
 
    issuesList.innerHTML = '';
 
@@ -19,7 +20,17 @@ function fetchIssues () {
       let status = issues[i].status
       let statusColor = status == "Closed" ? 'label-success' : 'label-info'
 
-      //issuesList.innerHTML +=
+      issuesList.innerHTML +=
+      '<div class="well">' +
+      '<h6>Issue ID:' + id + '</h6>' +
+      '<p><span class= "label ' +statusColor + ' ">' + status + '</span></p>' + 
+      '<h3>' + subject + '</h3>' +
+      '<p>' + description + '</p>' + 
+      '<p><span class="glyphicon glyphicon-time"></span> ' + severity + ' ' +
+      '<span class="glyphicon glyphicon-user"></span>' + assignedTo + '</p>' +
+      '<a href="#" class="btn btn-warning" onclick="setStatusClosed(\''+id+'\')">Close</a> ' +
+      '<a href="#" class="btn btn-danger" onclick="deleteIssue(\''+id+'\')">Delete</a> ' 
+      + '</div>'
    }
 }
 
@@ -33,9 +44,9 @@ function saveIssue(e) {
 
    let issue = {
       id: issueId,
-      subkect: issueSubject,
+      subject: issueSubject,
       description: issueDesc,
-      severity: issueSeverity,
+      severity: issueSeverity,  
       assignedTo: issueAssignedTo,
       status: issueStatus
    }
