@@ -14,6 +14,8 @@ I wanted to practice working with a CSS framework [BootStrap] to get a good look
 
 If I had more time, I would have made the CSS look better. I think BootStrap is fine to start but I would come back and use Tailwind CSS to make it look even better.
 
+I would also implement an MVC backend framework to make this a full-stack application, as this would make things more secure and official
+
 ## Lessons Learned:
 
 Working with ChanceJS was interesting to render it as a ticket issue ID. I found working with BootStrap was nice and simple. I believe that it is important to know how a Ticket Tracker would be used on a team and I feel that this is a solid project to showcase this interest.
